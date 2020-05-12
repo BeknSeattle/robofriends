@@ -1,6 +1,70 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 100%); /* w3c */
+  font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  color: #1d1d1f;
+  font-size: 12px;
+  background-color: #f5f5f7;
+}
+header{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  color: #f5f5f7; 
+}
+header h1{
+  font-size: 1.6em;
+  padding: 1em;
+}
+.main__header{
+  height: 100vh;
+}
+.hero__image{
+  width: 100vw;
+  text-align: center;
+  padding: 0 2em;
+  background-color: #e6e6e6;
+}
+figcaption{
+  padding: .5em;
+  font-style: italic;
+}
+ul{
+  padding: 1.5em 0;
+  margin: 0;
+}
+li{
+  display: inline;
+  padding: 0 1em 
+}
+.nav__search{
+  display: inline;
+  padding: 1.5em;
+  border-radius: 5px;
+}
+a{
+  text-decoration: none;
+  color: #1d1d1f;
+}
+nav{
+  margin-left: auto;
+}
+nav a{
+  font-size: 1.2em;
+  color: #f5f5f7;
+}
+article{
+  margin: 0 auto;
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5em;
+  padding: 2em;
+  line-height: 1.4em;
 }

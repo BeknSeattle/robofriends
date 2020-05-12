@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import HeroImage from '../components/HeroImage';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import Footer from '../components/Footer';
 import './App.css';
 
 class App extends Component {
@@ -28,16 +30,31 @@ class App extends Component {
     const filteredRobots = robots.filter(robot =>{
       return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     })
-    return !robots.length ?
-      <h1>Loading</h1> :
-      (
-        <div className='tc'>
-          <h1 className='f1'>RoboFriends</h1>
-          <SearchBox searchChange={this.onSearchChange}/>
+    return !robots.length?
+    <h1>Loading</h1>:
+    (
+      <Fragment>
+      <div className="main__header">
+        <HeroImage />        
+        <header>
+          <h1>Joygi's Robots</h1>
+          <nav>
+            <ul>
+              <li><a href="index.html">This-App</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact me</a></li>
+              <li><SearchBox searchChange={this.onSearchChange}/></li>
+            </ul>
+          </nav>
+        </header>
+        </div>
+        <main className='tc'>        
           <Scroll>
             <CardList robots={filteredRobots} />
           </Scroll>
-        </div>
+        </main>
+        <Footer />
+        </Fragment>
       );
   }
 }
