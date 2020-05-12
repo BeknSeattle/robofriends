@@ -4,6 +4,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import Footer from '../components/Footer';
+import ErrorBoundry from '../components/ErrorBoundry';
 import './App.css';
 
 class App extends Component {
@@ -50,7 +51,9 @@ class App extends Component {
         </div>
         <main className='tc'>        
           <Scroll>
-            <CardList robots={filteredRobots} />
+            <ErrorBoundry>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundry>
           </Scroll>
         </main>
         <Footer />
