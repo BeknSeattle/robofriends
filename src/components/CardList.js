@@ -1,20 +1,20 @@
 import React from 'react';
 import Card from './Card';
 
-const CardList = ({ robots }) => {
+const CardList = ({ people, people1, people2, people3 }) => {
   // if(true){
-  //   throw new Error ('There was an Error, we are fixing your Robots');
+  //   throw new Error ('There was an Error, we are fixing your people');
   // }
   return (
     <article>
       {
-        robots.map((user, i) => {
+        [...people, ...people1, ...people2, ...people3].map((result, i) => {
           return (
             <Card
               key={i}
-              id={robots[i].id}
-              name={robots[i].name}
-              email={robots[i].email}
+              name={result.name}
+              height={result.height}
+              hair_color={result.hair_color}
               />
           );
         })
